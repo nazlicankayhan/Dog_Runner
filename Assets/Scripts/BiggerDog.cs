@@ -11,8 +11,11 @@ public class BiggerDog : MonoBehaviour
         {
             transform.localScale = transform.localScale + new Vector3(0.2f, 0.2f, 0.2f);
             Score.score += 5;
-            SoundManager.instance.audioSource.clip = SoundManager.instance.Correct;
-            SoundManager.instance.audioSource.Play();
+            if (!SoundManager.instance.audioSource.isPlaying)
+            {
+                SoundManager.instance.audioSource.clip = SoundManager.instance.Correct;
+                SoundManager.instance.audioSource.Play();
+            }
         }
     }
 }

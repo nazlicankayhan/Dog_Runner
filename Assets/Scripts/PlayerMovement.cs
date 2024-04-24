@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
                 transform.position.y, transform.position.z);
 
             }
-            float xPosition = Mathf.Clamp(transform.position.x, 0f, 10f);
+            float xPosition = Mathf.Clamp(transform.position.x, 0f, 8f);
             transform.position = new Vector3(xPosition, transform.position.y, transform.position.z);
         }
 
