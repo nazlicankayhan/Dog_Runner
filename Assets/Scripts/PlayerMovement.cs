@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isGameStarted = false;
     public bool isGameStop = false;
     [SerializeField]
-    GameObject Completed, confetti,Retry;
+    GameObject Completed, confetti,Retry,Hazýrlayanlar,Panel;
 
     private void Start()
     {
@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log(animator.name);
         Completed.SetActive(false);
         confetti.SetActive(false);
+        Hazýrlayanlar.SetActive(false);
+        Panel.SetActive(false);
     }
     private void FixedUpdate()
 
@@ -108,6 +110,8 @@ public class PlayerMovement : MonoBehaviour
             Completed.SetActive(true);
             confetti.SetActive(true);
             Retry.SetActive(true);
+            Hazýrlayanlar.SetActive(true);
+            Panel.SetActive(true);
             StopMovement();
         }
 

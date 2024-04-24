@@ -21,6 +21,7 @@ public class CollectController : MonoBehaviour
             other.gameObject.AddComponent<CollectController>();
             other.gameObject.GetComponent<BoxCollider>().isTrigger = false;
             other.gameObject.AddComponent<NodeMovement>();
+
             if (listC.dogs.Count > 1)
             {
                 other.gameObject.GetComponent<NodeMovement>().connectedNode = listC.dogs[listC.dogs.Count - 1].transform;
@@ -31,6 +32,7 @@ public class CollectController : MonoBehaviour
                 other.gameObject.GetComponent<NodeMovement>().connectedNode = transform;
             }
             listC.dogs.Add(other.gameObject);
+            Score.score += 5;
             other.gameObject.tag = "Collected";
             StartCoroutine(animationsStart());
         }

@@ -37,6 +37,7 @@ public class FailedController : MonoBehaviour
                 Destroy(item.GetComponent<CollectController>());
             }
             ListC.dogs.Clear();
+            Score.score = 0;
         }
     }
     IEnumerator WaitAtTheObstacle()
