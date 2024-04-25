@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioSource audioSource;
-    public AudioClip Correct;
+    public AudioSource audioSourceBlue,audioSourceRed,audioSourceCon,audioSourceCollect;
+    public AudioClip blueDoor,redDoor,confetti,collect;
     public GameObject soundManager;
     public static SoundManager instance;
     private void Start()
     {
         instance = this;
-        audioSource = GetComponent<AudioSource>();
+        
     }
 }

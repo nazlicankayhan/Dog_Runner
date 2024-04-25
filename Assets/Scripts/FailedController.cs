@@ -21,6 +21,11 @@ public class FailedController : MonoBehaviour
     {
         if (collision.collider.tag == "Collected")
         {
+            if (!SoundManager.instance.audioSourceRed.isPlaying)
+            {
+                SoundManager.instance.audioSourceRed.clip = SoundManager.instance.redDoor;
+                SoundManager.instance.audioSourceRed.Play();
+            }
             var ListC = ListControl.instance;
             ListC.b++;
             if (ListC.b == 1)

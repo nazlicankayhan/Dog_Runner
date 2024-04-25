@@ -33,6 +33,11 @@ public class CollectController : MonoBehaviour
             }
             listC.dogs.Add(other.gameObject);
             Score.score += 5;
+            if (!SoundManager.instance.audioSourceCollect.isPlaying)
+            {
+                SoundManager.instance.audioSourceCollect.clip = SoundManager.instance.collect;
+                SoundManager.instance.audioSourceCollect.Play();
+            }
             other.gameObject.tag = "Collected";
             StartCoroutine(animationsStart());
         }

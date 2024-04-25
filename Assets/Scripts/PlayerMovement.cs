@@ -36,11 +36,11 @@ public class PlayerMovement : MonoBehaviour
             Vector2 mousePos = playerActions.PlayerControl.DeltaPos.ReadValue<Vector2>();
             if (isBeingPressed)
             {
-                transform.position = new Vector3((mousePos.x * Time.deltaTime * 10) + transform.position.x,
+                transform.position = new Vector3((mousePos.x * Time.deltaTime * 2) + transform.position.x,
                 transform.position.y, transform.position.z);
 
             }
-            float xPosition = Mathf.Clamp(transform.position.x, 0f, 8f);
+            float xPosition = Mathf.Clamp(transform.position.x, 0f, 10f);
             transform.position = new Vector3(xPosition, transform.position.y, transform.position.z);
         }
 
@@ -107,6 +107,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "EndStop")
         {
+            SoundManager.instance.audioSourceCon.clip = SoundManager.instance.confetti;
+            SoundManager.instance.audioSourceCon.Play();
+
             Completed.SetActive(true);
             confetti.SetActive(true);
             Retry.SetActive(true);
